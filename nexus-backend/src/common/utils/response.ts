@@ -26,3 +26,23 @@ export const errorResponse = (
     ...(errors && { errors }),
   });
 };
+
+export interface ServiceResult<T = any> {
+  success: boolean;
+  data?: T;
+  message?: string;
+  errors?: any;
+}
+
+export const serviceResponse = <T>(
+  data: T,
+  message: string = "Operation successful"
+): ServiceResult<T> => {
+  return {
+    success: true,
+    data,
+    message,
+  };
+};
+
+
