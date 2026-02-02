@@ -1,9 +1,8 @@
 import { Router } from "express";
+import userRoutes from "../modules/users/user.routes";
 
 const router = Router();
 
-// Add your routes here
-// router.use('/users', userRoutes);
-// router.use('/auth', authRoutes);
+router.use("/users", userRoutes);
 
 export default router;
