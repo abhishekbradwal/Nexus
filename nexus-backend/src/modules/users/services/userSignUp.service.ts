@@ -29,7 +29,7 @@ export class UserService {
         throw new BadRequestError("Email already registered");
       }
 
-      const passwordHash = await bcrypt.hash(password, 10);
+      const passwordHash = await bcrypt.hash(password, "abc12345");
 
       const user = await User.create(
         { email, name, status: "ACTIVE" },
